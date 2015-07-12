@@ -9,18 +9,10 @@ You need [Leiningen](http://leiningen.org/).
 1. Clone the repo
 2. `lein run`
 
-## Usage
+## Building
 
-FIXME: explanation
-
-    $ java -jar benjon-0.1.0-standalone.jar [args]
-
-## Options
-
-FIXME: listing of options this app accepts.
-
-## Examples
-
+    lein uberjar
+    java -jar target/uberjar/benjon-0.1.0-SNAPSHOT-standalone.jar
 
 ## License
 
