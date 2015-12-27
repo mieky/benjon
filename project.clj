@@ -5,8 +5,7 @@
   :license {:name "MIT"
             :url "http://opensource.org/licenses/MIT"}
   :dependencies [[org.clojure/clojure "1.7.0"]
-                 [compojure "1.4.0"]
-                 [ring/ring-defaults "0.1.5"]]
+                 [compojure "1.4.0"]]
   :plugins [[lein-ring "0.9.7"]]
   :ring {:handler benjon.core/app}
   :main ^:skip-aot benjon.core
