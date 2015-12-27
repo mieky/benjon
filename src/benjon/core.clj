@@ -1,16 +1,18 @@
 (ns benjon.core
-  (:require [compojure.handler :as handler]
+  (:require [clojure.java.io :as io]
+            [compojure.handler :as handler]
             [compojure.route :as route]
             [compojure.core :refer :all]
-            [clojure.java.io :as io]
-            (ring.middleware [multipart-params :as mp]))
+            [ring.middleware.multipart-params :as mp])
   (:gen-class))
 
 (defn upload-file [file]
   (let [tempfile (get file :tempfile)
-        filename (get file :filename)]
+        filename (get file :filename)
+        targetfile (io/file "resources" "public" filename)]
     (println (str "tempfile: " tempfile " filename: " filename))
-    (io/copy tempfile (io/file "resources" "public" filename))
+    (io/make-parents targetfile) 
+    (io/copy tempfile targetfile)
     "Success!"))
 
 (defroutes app-routes
