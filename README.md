@@ -7,7 +7,7 @@ Potentially a Clojure backend for [benson](http://github.com/mieky/benson).
 You need [Leiningen](http://leiningen.org/).
 
 1. Clone the repo
-2. `lein run`
+2. `lein ring server`
 
 ## Building
 
