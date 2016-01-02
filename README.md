@@ -4,7 +4,7 @@ Potentially a Clojure backend for [benson](http://github.com/mieky/benson).
 
 ## Setting up the database
 
-- Requires postgres
+- Requires postgresql 9.4+
 - Create and populate your database stub, see src/sql/queries.sql
 
 ## Running
@@ -12,7 +12,7 @@ Potentially a Clojure backend for [benson](http://github.com/mieky/benson).
 You need [Leiningen](http://leiningen.org/).
 
 1. Clone the repo
-2. `lein ring server`
+2. `lein run`
 
 ## Building
 
