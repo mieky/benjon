@@ -5,7 +5,9 @@
             :url "http://opensource.org/licenses/MIT"}
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [compojure "1.4.0"]
-                 [http-kit "2.1.18"]]
+                 [http-kit "2.1.18"]
+                 [yesql "0.5.1"]
+                 [org.postgresql/postgresql "9.4-1206-jdbc41"]]
   :main ^:skip-aot benjon.core
   :uberjar-name "benjon-standalone.jar"
   :min-lein-version "2.5.1"

@@ -2,6 +2,11 @@
 
 Potentially a Clojure backend for [benson](http://github.com/mieky/benson).
 
+## Setting up the database
+
+- Requires postgres
+- Create and populate your database stub, see src/sql/queries.sql
+
 ## Running
 
 You need [Leiningen](http://leiningen.org/).

@@ -4,7 +4,8 @@
             [compojure.route :as route]
             [compojure.core :refer :all]
             [org.httpkit.server :refer [run-server]]
-            [ring.middleware.multipart-params :as mp])
+            [ring.middleware.multipart-params :as mp]
+            [benjon.db :as db])
   (:gen-class))
 
 (defn get-server-port []
