@@ -10,7 +10,4 @@
 
 (defqueries "sql/queries.sql" {:connection db-spec})
 
-(defn show-messages []
-  (messages))
-
-(messages)
+(defn uuid [] (str (java.util.UUID/randomUUID)))
