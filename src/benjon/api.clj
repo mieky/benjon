@@ -3,7 +3,8 @@
             [compojure.handler :as handler]
             [compojure.route :as route]
             [compojure.core :refer :all]
-            [ring.middleware.multipart-params :as mp]            
+            [cheshire.core :refer :all]
+            [ring.middleware.multipart-params :as mp]
             [benjon.db :as db]))
 
 (defn upload-file [file]
@@ -15,9 +16,11 @@
     (io/copy tempfile targetfile)
     "Success!"))
 
-(defroutes app-routes
-  (GET "/" [] "Hello root!")
+(defroutes api-routes
+  (GET "/api" [] "Hello root!")
+  (GET "/api/message" []
+    (generate-string (db/messages)))
   (mp/wrap-multipart-params
-    (POST "/upload" {params :params}
+    (POST "/api/upload" {params :params}
       (upload-file (get params "file"))))
   (route/not-found "Not Found"))

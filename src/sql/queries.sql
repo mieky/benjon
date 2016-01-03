@@ -1,6 +1,8 @@
 -- name: messages
-SELECT * FROM message;
+SELECT * FROM message
+ORDER BY date DESC;
 
--- name: insert-message
-INSERT INTO message (id, message)
-VALUES (:id, :message);
+-- name: new-message
+-- Adds a new message for given author
+INSERT INTO message (id, author_id, message)
+VALUES (:id, :author_id, :message);
