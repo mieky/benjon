@@ -2,7 +2,6 @@
   (:require [clojure.java.io :as io]
             [compojure.route :as route]
             [compojure.core :refer :all]
-            [cheshire.core :refer :all]
             [ring.middleware.multipart-params :as mp]
             [ring.middleware.format :refer [wrap-restful-format]]
             [benjon.db :as db]))
@@ -21,7 +20,7 @@
   (let [uuid (db/uuid)
         rows (db/new-message! {:id uuid
                                :author_id "c43e4bb6-d04b-4d66-bc5d-bc43296ec15c"
-                               :message "kukkuu"})]
+                               :message (get params "message")})]
     (db/message-by-id {:id uuid})))
 
 (defn dump-req [req]
