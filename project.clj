@@ -8,6 +8,7 @@
                  [compojure "1.4.0"]
                  [http-kit "2.1.18"]
                  [yesql "0.5.1"]
+                 [ring-middleware-format "0.7.0"]
                  [org.postgresql/postgresql "9.4-1206-jdbc41"]
                  [cheshire "5.5.0"]]
   :main ^:skip-aot benjon.core

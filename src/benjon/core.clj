@@ -1,6 +1,6 @@
 (ns benjon.core
   (:require [org.httpkit.server :refer [run-server]]
-            [benjon.api :as api]
+            [benjon.routes :as routes]
             [benjon.db :as db])
   (:gen-class))
 
@@ -14,4 +14,4 @@
   [& args]
   (let [port (get-server-port)]
     (println (format "Starting server at localhost:%s..." port))
-    (run-server api/api-routes {:port port})))
+    (run-server routes/site {:port port})))
