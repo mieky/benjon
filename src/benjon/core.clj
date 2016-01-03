@@ -1,7 +1,6 @@
 (ns benjon.core
   (:require [org.httpkit.server :refer [run-server]]
-            [benjon.routes :as routes]
-            [benjon.db :as db])
+            [benjon.routes :as routes])
   (:gen-class))
 
 (defn get-server-port []
