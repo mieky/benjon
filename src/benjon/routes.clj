@@ -34,6 +34,7 @@
   ; let wrap-restful-format middleware take care of serialization,
   ; no more need for (json-response (generate-string (db/messages)))))
   (GET "/api/message" [] (db/messages))
+  (GET "/api/message/:id" [id] (db/message-by-id {:id id}))
   (POST "/api/message" {params :params} (post-message params))
   (POST "/api/upload" {params :params} (upload-file (get params "file")))
 
